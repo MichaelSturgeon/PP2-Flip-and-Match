@@ -106,3 +106,60 @@ li {
 }
     /* End of general styles */
 /* End of Media query: large or landscape phones (400px and up) */
+/* Start of Media query: tablets (500px and up) */
+@media screen and (min-width: 500px) {
+    /* Start of general styles */
+    h1,
+    .button {
+        font-size: 2.5rem;
+    }
+    /* End of general styles */
+    /* Start of game board styles */
+    .card {
+          width: 110px;
+          height: 110px;
+      }
+    /* End of game board styles */
+}
+/* End of Media query: tablets (500px and up) */
+/* Start of Media query: large tablets and laptops (600px and up) */
+@media screen and (min-width: 600px) {
+    /* Start of general styles */
+    h1,
+    .button {
+        font-size: 3rem;
+    }
+    
+    p,
+    li {
+        font-size: 1.1rem;
+    }    
+    /* End of general styles */
+    /* Start of game board styles */
+    .card {
+        width: 130px;
+        height: 130px;
+    }
+    /* End of game board styles */    
+}
+/* End of Media query: large tablets and laptops (600px and up) */
+/* Start of Media query: laptops and desktops (700px and up) */
+@media screen and (min-width: 700px) {
+    /* Start of general styles */
+    h1,
+    .button {
+        font-size: 3.5rem;
+    }  
+    /* End of general styles */
+    /* Start of game board styles */  
+    #card-container {
+      grid-template-columns: repeat(4, auto);
+    }
+  
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+    /* End of game board styles */
+  }
+/* End of Media query: laptops and desktops (700px and up) */
