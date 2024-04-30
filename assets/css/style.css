@@ -52,3 +52,25 @@ li {
     display:none;
 }
 /* End of general styles */
+/* Start of game board styles */
+#game-board {
+    background-color: #812991;
+    border-color: #a5439a;
+}
+
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    width: 90px;
+    height: 90px;
+    background-color: #fff14f;
+    border-radius: 10px;
+    border: 5px solid #ffcb05;
+}
+/* End of game board styles */
