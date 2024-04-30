@@ -12,7 +12,17 @@ body {
 }
 
 .game-stage {
-    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
 }
 
 h1 {
