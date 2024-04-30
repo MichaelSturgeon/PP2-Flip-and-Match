@@ -85,3 +85,14 @@ li {
     border: 5px solid #ffcb05;
 }
 /* End of game board styles */
+/* Start of score board styles */
+#score-board {
+    background-color: #005ca7;
+    border-color: #23a1db;
+}
+
+#retry-button {
+    background-color: #f05133;
+    border-color: #ed1b24;
+}
+/* End of score board styles */
