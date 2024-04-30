@@ -1,0 +1,44 @@
+/* Start of general styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    background: #ffffff;
+    font-family: "Coming soon", Arial;
+    cursor: pointer;
+}
+
+.game-stage {
+    
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p,
+li {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 10px;
+    list-style-position: inside;
+}
+
+.button {
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 5px solid;
+}
+
+.hidden {
+    display:none;
+}
+/* End of general styles */
