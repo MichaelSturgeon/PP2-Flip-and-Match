@@ -52,6 +52,17 @@ li {
     display:none;
 }
 /* End of general styles */
+/* Start of welcome screen styles */
+#welcome-screen {
+    background-color:#23a1db; 
+    border-color:#005ca7;
+}
+
+#play-button {
+    background-color: #55a647;
+    border-color: #006231;
+}
+/* End of welcome screen styles */
 /* Start of game board styles */
 #game-board {
     background-color: #812991;
