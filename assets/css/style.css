@@ -96,3 +96,13 @@ li {
     border-color: #ed1b24;
 }
 /* End of score board styles */
+/* Start of Media query: large or landscape phones (400px and up) */
+@media screen and (min-width: 400px) {
+    /* Start of general styles */
+    p,
+    li {
+        font-size: 0.95rem;
+    }
+}
+    /* End of general styles */
+/* End of Media query: large or landscape phones (400px and up) */
