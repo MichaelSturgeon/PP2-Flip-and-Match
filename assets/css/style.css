@@ -80,8 +80,25 @@ li {
 .card {
     width: 90px;
     height: 90px;
-    background-color: #fff14f;
+    position: relative;
     border-radius: 10px;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;        
+    position: absolute;  
+}
+
+.front {
+    object-fit: cover;
+    border: 5px solid #ffcb05;
+}
+
+.back {
+    background-color: #fff14f;
     border: 5px solid #ffcb05;
 }
 /* End of game board styles */
