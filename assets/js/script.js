@@ -30,7 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // End of welcome screen code
     // Start of game board code
     if (!document.getElementById('game-board').classList.contains('hidden')) {
+        const card = document.querySelectorAll('.card');
+        card.forEach(card => card.addEventListener('click', flipcard));
 
+        function flipcard() {
+            this.classList.toggle('flip');
+        }
     }
     // End of game board code
     // Start of score board code
