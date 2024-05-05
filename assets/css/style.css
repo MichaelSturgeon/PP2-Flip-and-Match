@@ -75,13 +75,20 @@ li {
     gap: 5px;
     margin: auto;
     padding: 20px;
+    perspective: 1000px;
 }
 
 .card {
-    width: 90px;
     height: 90px;
+    width: 90px;
     position: relative;
     border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
 }
 
 .front,
@@ -89,17 +96,18 @@ li {
     height: 100%;
     width: 100%;
     border-radius: 5px;        
-    position: absolute;  
+    position: absolute;
+    backface-visibility: hidden;
+    border: 5px solid #ffcb05;  
 }
 
 .front {
     object-fit: cover;
-    border: 5px solid #ffcb05;
+    transform: rotateY(180deg);
 }
 
 .back {
     background-color: #fff14f;
-    border: 5px solid #ffcb05;
 }
 /* End of game board styles */
 /* Start of score board styles */
