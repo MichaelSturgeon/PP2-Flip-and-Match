@@ -90,13 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 secondCard.classList.add('match');
                 firstCard.classList.remove('flip');
                 secondCard.classList.remove('flip');
-            } else {
+                firstCard = null;
+                secondCard = null;
+                return firstCard, secondCard;
+            }
+
+            if (firstCard.childNodes[1].alt !== secondCard.childNodes[1].alt) {
                 setTimeout(() => {
                     firstCard.classList.remove('flip');
                     secondCard.classList.remove('flip');
-                }, 1000);                
+                    firstCard = null;
+                    secondCard = null;
+                    return firstCard, secondCard;
+                }, 1000);
             }
         }
+
     }
 
 
