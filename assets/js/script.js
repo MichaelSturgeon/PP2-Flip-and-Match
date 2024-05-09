@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameBoard = document.getElementById('game-board');
     const scoreBoard = document.getElementById('score-board');
     const cards = document.querySelectorAll('.card');
-    let fistCard = null;
+    const cardsFlipped = document.getElementsByClassName('flip');
+    let matchedCards = 0;
+    let firstCard = null;
     let secondCard = null;
 
     // Start of welcome screen code    
@@ -56,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function startGame() {
         shuffleCards()
 
-        cards.forEach(card => card.addEventListener('click', flipcard));        
-        
+        cards.forEach(card => card.addEventListener('click', flipcard));
+
     }
 
     function shuffleCards() {
@@ -67,18 +69,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function flipcard() {
-        const cardsFlipped = document.getElementsByClassName('flip');
+
         if (cardsFlipped.length < 2) {
             this.classList.add('flip');
 
-            if (fistCard === null) {
-                fistCard = this.childNodes[1].alt;
+            if (firstCard === null) {
+                firstCard = this;
             } else if (secondCard === null) {
-                secondCard = this.childNodes[1].alt;
+                secondCard = this;
             }
+        }
+        checkMatching();
 
+    }
+
+    function checkMatching() {
+        if (cardsFlipped.length === 2) {
+            if (firstCard.childNodes[1].alt === secondCard.childNodes[1].alt) {
+                firstCard.classList.add('match');
+                secondCard.classList.add('match');
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
+            } else {
+                setTimeout(() => {
+                    firstCard.classList.remove('flip');
+                    secondCard.classList.remove('flip');
+                }, 1000);                
+            }
         }
     }
+
 
 
 })
