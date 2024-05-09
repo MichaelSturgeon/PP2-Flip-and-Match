@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameBoard = document.getElementById('game-board');
     const scoreBoard = document.getElementById('score-board');
     const cards = document.querySelectorAll('.card');
+    let fistCard = null;
+    let secondCard = null;
 
     // Start of welcome screen code    
     // Add click event to play button.
@@ -36,13 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 10000);
 
     // End of welcome screen code
-    // Start of game board code
-    cards.forEach(card => card.addEventListener('click', flipcard));
-    function flipcard() {
-        this.classList.toggle('flip');
-    }
 
+    // Start of game board code   
     // End of game board code
+
     // Start of score board code
     // Add click event to retry button.
     const retryButton = document.getElementById('retry-button');
@@ -56,6 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Functions
     function startGame() {
         shuffleCards()
+
+        cards.forEach(card => card.addEventListener('click', flipcard));        
+        
     }
 
     function shuffleCards() {
@@ -63,4 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.order = Math.floor(Math.random() * cards.length);
         });
     }
+
+    function flipcard() {
+        const cardsFlipped = document.getElementsByClassName('flip');
+        if (cardsFlipped.length < 2) {
+            this.classList.add('flip');
+
+            if (fistCard === null) {
+                fistCard = this.childNodes[1].alt;
+            } else if (secondCard === null) {
+                secondCard = this.childNodes[1].alt;
+            }
+
+        }
+    }
+
+
 })
