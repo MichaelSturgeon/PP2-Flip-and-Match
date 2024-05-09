@@ -1,13 +1,20 @@
-/**
- * The code below ensures that the DOM loads before starting the game. 
- */
+// Load the DOM before starting the game.
 document.addEventListener("DOMContentLoaded", function () {
-    // Start of welcome screen code
-    if (!document.getElementById('welcome-screen').classList.contains('hidden')) {
-        /**
-         * The code below will pick a value from the benefits list array at random
-         * and display it on the welcome screen inside the paragraph element.
-        */
+
+    //Global variables
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const gameBoard = document.getElementById('game-board');
+    const scoreBoard = document.getElementById('score-board');
+
+    // Start of welcome screen code    
+        // Add click event to play button.
+        const playButton = document.getElementById('play-button');
+        playButton.addEventListener('click', () => {
+            welcomeScreen.classList.add('hidden');
+            gameBoard.classList.remove('hidden');
+        })
+
+        // Display a random benefit on welcome screen.
         const benefits = document.getElementById('benefits');
 
         const benefitsList = [
@@ -26,21 +33,24 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)]
         }, 10000);
 
-    }
     // End of welcome screen code
     // Start of game board code
-    if (!document.getElementById('game-board').classList.contains('hidden')) {
         const card = document.querySelectorAll('.card');
         card.forEach(card => card.addEventListener('click', flipcard));
 
         function flipcard() {
             this.classList.toggle('flip');
         }
-    }
+    
     // End of game board code
     // Start of score board code
-    if (!document.getElementById('score-board').classList.contains('hidden')) {
-
-    }
+        // Add click event to retry button.
+        const retryButton = document.getElementById('retry-button');
+        retryButton.addEventListener('click', () => {
+            gameBoard.classList.remove('hidden');            
+            scoreBoard.classList.add('hidden');
+        })
     // End of score board code
+
+    // Functions
 })
