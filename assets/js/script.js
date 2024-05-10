@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scoreBoard = document.getElementById('score-board');
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
+    let preventClick = false;
     let matchedCards = 0;
     let firstCard = null;
     let secondCard = null;
@@ -69,6 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function flipcard() {
+        if (preventClick) {
+            return;
+        }
 
         if (cardsFlipped.length < 2) {
             this.classList.add('flip');
@@ -85,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkMatching() {
         if (cardsFlipped.length === 2) {
+            preventClick = true;
             if (firstCard.childNodes[1].alt === secondCard.childNodes[1].alt) {
                 firstCard.classList.add('match');
                 secondCard.classList.add('match');
@@ -92,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 secondCard.classList.remove('flip');
                 firstCard = null;
                 secondCard = null;
+                preventClick = false;
                 return firstCard, secondCard;
             }
 
@@ -101,11 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     secondCard.classList.remove('flip');
                     firstCard = null;
                     secondCard = null;
+                    preventClick = false;
                     return firstCard, secondCard;
                 }, 1000);
             }
         }
-
     }
 
 
