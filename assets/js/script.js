@@ -83,15 +83,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 let minDisplayed = min;
                 let secDisplayed = sec;
 
-                if(min < 10) {
+                if (min < 10) {
                     minDisplayed = "0" + minDisplayed;
                 }
 
-                if(sec < 10) {
+                if (sec < 10) {
                     secDisplayed = "0" + secDisplayed;
                 }
 
-                if(min == 60) {
+                if (min == 60) {
                     timer = false;
                     return timer;
                 }
@@ -108,14 +108,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (cardsFlipped.length < 2) {
-            this.classList.add('flip');
 
-            if (firstCard === null) {
-                firstCard = this;
+            if (!this.classList.contains('flip', 'match')) {
 
-            } else if (secondCard === null) {
-                secondCard = this;
+                this.classList.add('flip');
+
+                if (firstCard === null) {
+                    firstCard = this;
+
+                } else if (secondCard === null) {
+                    secondCard = this;
+                }
             }
+
+
+
         }
         checkMatching();
 
