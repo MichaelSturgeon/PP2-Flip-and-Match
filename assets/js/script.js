@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const welcomeScreen = document.getElementById('welcome-screen');
     const gameBoard = document.getElementById('game-board');
     const scoreBoard = document.getElementById('score-board');
+    const timerDisplay = document.getElementById('timer-display');
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
     const matchedCards = document.getElementsByClassName('match');
     let min = 0;
     let sec = 0;
-    let timer = true;
     let preventClick = false;
     let firstCard = null;
     let secondCard = null;
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add click event to retry button.
     const retryButton = document.getElementById('retry-button');
     retryButton.addEventListener('click', () => {
+        resetGameBoard();
         gameBoard.classList.remove('hidden');
         scoreBoard.classList.add('hidden');
         startGame();
@@ -72,34 +73,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startTimer() {
-        if (timer) {
-            timerIntId = setInterval(() => {
-                sec++;
-                if (sec == 60) {
-                    min++;
-                    sec = 0;
-                }
 
-                let minDisplayed = min;
-                let secDisplayed = sec;
+        timerIntId = setInterval(() => {
+            sec++;
+            if (sec == 60) {
+                min++;
+                sec = 0;
+            }
 
-                if (min < 10) {
-                    minDisplayed = "0" + minDisplayed;
-                }
+            let minDisplayed = min;
+            let secDisplayed = sec;
 
-                if (sec < 10) {
-                    secDisplayed = "0" + secDisplayed;
-                }
+            if (min < 10) {
+                minDisplayed = "0" + minDisplayed;
+            }
 
-                if (min == 60) {
-                    timer = false;
-                    return timer;
-                }
+            if (sec < 10) {
+                secDisplayed = "0" + secDisplayed;
+            }
 
-                document.getElementById('timer-display').innerHTML = minDisplayed + ':' + secDisplayed;
+            if (min == 60) {
+                timer = false;
+                return timer;
+            }
 
-            }, 1000)
-        }
+            timerDisplay.innerHTML = minDisplayed + ':' + secDisplayed;
+
+        }, 1000)
+
     }
 
     function flipcard() {
@@ -154,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function checkWinner() {
-        console.log(matchedCards.length);
         if (matchedCards.length === 12) {
             clearInterval(timerIntId);
             setTimeout(() => {
@@ -164,6 +164,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    function resetGameBoard() {
+        min = 0;
+        sec = 0;
+        timerDisplay.innerHTML = "00:00";
+        cards.forEach(card => {
+            card.classList.remove('flip', 'match');
+        });
+    }
 
 })
