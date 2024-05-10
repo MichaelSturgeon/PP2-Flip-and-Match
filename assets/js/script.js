@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const scoreBoard = document.getElementById('score-board');
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
+    const matchedCards = document.getElementsByClassName('match');
     let min = 0;
     let sec = 0;
     let timer = true;
     let preventClick = false;
-    let matchedCards = 0;
     let firstCard = null;
     let secondCard = null;
 
@@ -120,11 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     secondCard = this;
                 }
             }
-
-
-
         }
         checkMatching();
+        checkWinner();
 
     }
 
@@ -155,6 +153,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function checkWinner() {
+        console.log(matchedCards.length);
+        if (matchedCards.length === 12) {
+            setTimeout(() => {
+                gameBoard.classList.add('hidden');
+                scoreBoard.classList.remove('hidden');
+            }, 2000)
 
+        }
+    }
 
 })
