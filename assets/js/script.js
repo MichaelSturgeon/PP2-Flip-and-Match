@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const scoreBoard = document.getElementById('score-board');
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
+    let min = 0;
+    let sec = 0;
+    let timer = true;
     let preventClick = false;
     let matchedCards = 0;
     let firstCard = null;
@@ -57,16 +60,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Functions
     function startGame() {
-        shuffleCards()
-
+        shuffleCards();
+        startTimer();
         cards.forEach(card => card.addEventListener('click', flipcard));
-
     }
 
     function shuffleCards() {
         cards.forEach(card => {
             card.style.order = Math.floor(Math.random() * cards.length);
         });
+    }
+
+    function startTimer() {
+        if (timer) {
+            timerIntId = setInterval(() => {
+                sec++;
+                if (sec == 60) {
+                    min++;
+                    sec = 0;
+                }
+
+                let minDisplayed = min;
+                let secDisplayed = sec;
+
+                if(min < 10) {
+                    minDisplayed = "0" + minDisplayed;
+                }
+
+                if(sec < 10) {
+                    secDisplayed = "0" + secDisplayed;
+                }
+
+                if(min == 60) {
+                    timer = false;
+                    return timer;
+                }
+
+                document.getElementById('timer-display').innerHTML = minDisplayed + ':' + secDisplayed;
+
+            }, 1000)
+        }
     }
 
     function flipcard() {
@@ -79,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (firstCard === null) {
                 firstCard = this;
+
             } else if (secondCard === null) {
                 secondCard = this;
             }
