@@ -50,6 +50,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start of score board code
     // Add click event to retry button.
+    const playerScores = document.getElementById('player-scores');
+
+    let playerScoresList = [
+        {
+            name: 'Bradley',
+            score: '01:23'
+        },
+        {
+            name: 'Foley',
+            score: '04:56'
+        },
+        {
+            name: 'Conners',
+            score: '07:89'
+        },
+        {
+            name: 'Jones',
+            score: "01:11"
+        }];
+
+        renderScores();
+
     const retryButton = document.getElementById('retry-button');
     retryButton.addEventListener('click', () => {
         resetGameBoard();
@@ -161,6 +183,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 gameBoard.classList.add('hidden');
                 scoreBoard.classList.remove('hidden');
             }, 2000)
+        }
+    }
+
+    function renderScores() {
+        for(i = 0; i < playerScoresList.length; i++) {
+            playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerScoresList[i].score}</li>`
         }
     }
 
