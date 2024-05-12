@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             name: 'Conners',
-            score: '07mim 89sec'
+            score: '07min 89sec'
         },
         {
             name: 'Jones',
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderScores() {
         for(i = 0; i < playerScoresList.length; i++) {
-            playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerScoresList[i].score}</li>`
+            playerScores.innerHTML += `<li>${playerScoresList[i].name} - ${playerScoresList[i].score}</li>`
         }
     }
 
