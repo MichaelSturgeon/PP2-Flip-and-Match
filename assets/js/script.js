@@ -50,24 +50,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start of score board code
     // Add click event to retry button.
+    const currentScore = document.getElementById('current-score');
     const playerScores = document.getElementById('player-scores');
+    
 
     let playerScoresList = [
         {
             name: 'Bradley',
-            score: '01:23'
+            score: '01min 23sec'
         },
         {
             name: 'Foley',
-            score: '04:56'
+            score: '04min 56sec'
         },
         {
             name: 'Conners',
-            score: '07:89'
+            score: '07mim 89sec'
         },
         {
             name: 'Jones',
-            score: "01:11"
+            score: "01min 11sec"
         }];
 
         renderScores();
@@ -119,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return timer;
             }
 
-            timerDisplay.innerHTML = minDisplayed + ':' + secDisplayed;
+            timerDisplay.innerHTML = minDisplayed + 'min' + ' ' + secDisplayed + 'sec';
 
         }, 1000)
 
@@ -195,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function resetGameBoard() {
         min = 0;
         sec = 0;
-        timerDisplay.innerHTML = "00:00";
+        timerDisplay.innerHTML = "00min 00sec";
         cards.forEach(card => {
             card.classList.remove('flip', 'match');
         });

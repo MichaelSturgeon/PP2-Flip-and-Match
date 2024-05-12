@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Meta tags for search engines -->
-    <meta name="description"
-    content="Flip and Match. A fun card matching game designed to support curious toddlers.">
+    <meta name="description" content="Flip and Match. A fun card matching game designed to support curious toddlers.">
     <meta name="keywords" content="flip and match, matching cards, memory game, card puzzle">
 
     <!-- Google fonts code -->
@@ -21,11 +21,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon_io/favicon.ico'/>
-    
+    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon_io/favicon.ico' />
+
     <!-- Style sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <!-- Start of game container -->
     <section id="game-container">
@@ -43,69 +44,74 @@
         </section>
         <!-- End of welcome screen code -->
 
-        <!-- Start of game board code -->        
-        <section id="game-board" class="game-stage hidden">            
-            <h1 id="timer"><i class="fa-solid fa-stopwatch"></i> <span id="timer-display">00:00</span></h1>
-            <div id="card-container">    
+        <!-- Start of game board code -->
+        <section id="game-board" class="game-stage hidden">
+            <h1 id="timer"><i class="fa-solid fa-stopwatch"></i> <span id="timer-display">00min 00sec</span></h1>
+            <div id="card-container">
                 <div class="card">
                     <img class="front" src="assets/images/cow.webp" alt="cow">
                     <div class="back"></div>
-                </div>      
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/dog.webp" alt="dog">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/horse.webp" alt="horse">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/pig.webp" alt="pig">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/rooster.webp" alt="rooster">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/sheep.webp" alt="sheep">
                     <div class="back"></div>
-                </div>     
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/cow.webp" alt="cow">
                     <div class="back"></div>
-                </div>      
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/dog.webp" alt="dog">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/horse.webp" alt="horse">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/pig.webp" alt="pig">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/rooster.webp" alt="rooster">
                     <div class="back"></div>
-                </div>    
+                </div>
                 <div class="card">
                     <img class="front" src="assets/images/sheep.webp" alt="sheep">
                     <div class="back"></div>
-                </div>     
-            </div>           
+                </div>
+            </div>
         </section>
         <!-- End of game board code -->
 
         <!-- Start of score board code -->
         <section id="score-board" class="game-stage">
             <h1>Score board</h1>
-            <div id="game-scores">
-                <ul id="player-scores">
-                </ul>
-            </div>
+
+            <ol id="player-scores">
+            </ol>
+
+            <label for="player-name">Enter your name and save your score!</label>
+            <input type="text" id="player-name" value="" placeholder="Name" required>
+            <p id="current-score">12min 34sec</p>
+            <button data-type="submit" id="save-button" class="button"><i class="fa-solid fa-floppy-disk"></i>
+                Save</button>
             <button id="retry-button" class="button"><i class="fa-solid fa-rotate-left"></i> Retry</button>
         </section>
         <!-- End of score board code -->
@@ -116,4 +122,5 @@
     <script src="assets/js/script.js"></script>
     <!-- End of scripts -->
 </body>
+
 </html>
