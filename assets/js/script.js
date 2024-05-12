@@ -205,8 +205,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateScoreBoard() {
         const playerName = document.getElementById('player-name');
-        playerScoresList.push({name: `${playerName.value}`, score:`${timerDisplay.innerText}`});
-        playerName.value = null;
+        if (playerName.value === '') {
+            alert('Add your name to the Player Name fiels first!')
+            return;
+        } else {            
+            playerScoresList.push({ name: `${playerName.value}`, score: `${timerDisplay.innerText}` });
+            playerName.value = null;
+        }
     }
 
     function resetGameBoard() {
