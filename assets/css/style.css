@@ -128,14 +128,17 @@ ol {
     border: 5px solid #ff5205;
     background-color: #ff7e07;
     width: 80%;
-    max-width: 500px;
-    max-height: 170px;
-    overflow: scroll;
+    max-width: 500px;    
     scrollbar-width: none;
 }
 
 #score-board > p {
     margin-top: 15px;
+}
+
+#player-scores {
+    max-height: 170px;
+    overflow: scroll;
 }
 
 #current-score {

@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
     const matchedCards = document.getElementsByClassName('match');
-    let min = 0;
-    let sec = 0;
     let preventClick = false;
     let firstCard = null;
     let secondCard = null;
@@ -56,29 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let playerScoresList = [
         {
-            name: 'Bradley',
-            score: '0123'
+            name: 'Lina',
+            score: '0021'
         },
         {
-            name: 'Foley',
+            name: 'Macey',
             score: '0456'
         },
         {
-            name: 'Conners',
-            score: '0789'
-        },
-        {
-            name: 'Jones',
-            score: "0111"
+            name: 'Ditzy',
+            score: '0457'
         }];
-
-    let sortedScoresList = [];    
-
-    
-    for (i = 0; i < playerScoresList.length; i++) {
-        
-    }
-
 
     const saveButton = document.getElementById('save-button');
     saveButton.addEventListener('click', () => {
@@ -110,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startTimer() {
+        let min = 0;
+        let sec = 0;
 
         timerIntId = setInterval(() => {
             sec++;
@@ -204,15 +192,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderScores() {
         playerScores.innerHTML = '';
-        for (i = 0; i < playerScoresList.length; i++) {              
-            let playerMin = playerScoresList[i].score.slice(0, 2);
-            let playerSec = playerScoresList[i].score.slice(2, 4);
+        sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
+        for (i = 0; i < sortedScoresList.length; i++) {
+            let playerMin = sortedScoresList[i].score.slice(0, 2);
+            let playerSec = sortedScoresList[i].score.slice(2, 4);
             playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerMin}min ${playerSec}sec </li>`
         }
         currentScore.innerText = timerDisplay.innerText;
     }
 
-    function updateScoreBoard() {        
+    function updateScoreBoard() {
         const playerName = document.getElementById('player-name');
         if (playerName.value === '') {
             alert('Add your name to the Player Name fiels first!')
@@ -220,8 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             const scoreString = timerDisplay.innerText;
             let playerMin = scoreString.slice(0, 2);
-            let playerSec = scoreString.slice(6, 8);           
-            playerScoresList.push({ name: `${playerName.value}`, score: `${playerMin + playerSec}`});                    
+            let playerSec = scoreString.slice(6, 8);
+            playerScoresList.push({ name: `${playerName.value}`, score: `${playerMin + playerSec}` });
             playerName.value = null;
         }
     }
