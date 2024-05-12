@@ -23,11 +23,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin:auto;
+    padding: 10vh 5vw 20vh 5vw;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 p,
@@ -37,6 +39,7 @@ li {
     line-height: 15px;
     padding: 10px;
     list-style-position: inside;
+    max-width: 500px;
 }
 
 .button {
@@ -61,6 +64,7 @@ li {
 #play-button {
     background-color: #55a647;
     border-color: #006231;
+    margin: 170px 0 15px 0;
 }
 /* End of welcome screen styles */
 /* Start of game board styles */
@@ -123,6 +127,16 @@ ol {
     border-radius: 10px;
     border: 5px solid #ff5205;
     background-color: #ff7e07;
+    width: 80%;
+    max-width: 500px;
+}
+
+#score-board > p {
+    margin-top: 15px;
+}
+
+#current-score {
+    color: #ffcb05;
 }
 
 input {
@@ -130,17 +144,25 @@ input {
     font-weight: bold;
     padding: 10px 20px;
     border: 5px solid #ed1b24;
-    border-radius: 10px;
+    border-radius: 10px;    
+    width: 80%;
+    max-width: 500px;
+}
+
+input:focus {
+    outline: none;
 }
 
 #save-button {
     background-color: #f05133;
     border-color: #ed1b24;
+    margin-top: 5px;
 }
 
 #retry-button {
     background-color: #55a647;
-    border-color: #006231; 
+    border-color: #006231;
+    margin-top: 20px;
 }
 /* End of score board styles */
 /* Start of Media query: large or landscape phones (400px and up) */
