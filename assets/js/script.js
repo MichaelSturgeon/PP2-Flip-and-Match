@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add click event to retry button.
     const currentScore = document.getElementById('current-score');
     const playerScores = document.getElementById('player-scores');
-    
+
 
     let playerScoresList = [
         {
@@ -71,6 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
             name: 'Jones',
             score: "01min 11sec"
         }];
+
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.addEventListener('click', () => {
+        updateScoreBoard();
+        renderScores();
+    })
+
 
     const retryButton = document.getElementById('retry-button');
     retryButton.addEventListener('click', () => {
@@ -188,10 +196,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function renderScores() {
-        for(i = 0; i < playerScoresList.length; i++) {
+        playerScores.innerHTML = '';
+        for (i = 0; i < playerScoresList.length; i++) {
             playerScores.innerHTML += `<li>${playerScoresList[i].name} - ${playerScoresList[i].score}</li>`
         }
         currentScore.innerText = timerDisplay.innerText;
+    }
+
+    function updateScoreBoard() {
+        const playerName = document.getElementById('player-name');
+        playerScoresList.push({name: `${playerName.value}`, score:`${timerDisplay.innerText}`});
+        playerName.value = null;
     }
 
     function resetGameBoard() {
