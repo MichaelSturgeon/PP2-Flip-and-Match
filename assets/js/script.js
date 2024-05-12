@@ -72,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
             score: "01min 11sec"
         }];
 
-        renderScores();
-
     const retryButton = document.getElementById('retry-button');
     retryButton.addEventListener('click', () => {
         resetGameBoard();
@@ -184,6 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 gameBoard.classList.add('hidden');
                 scoreBoard.classList.remove('hidden');
+                renderScores();
             }, 2000)
         }
     }
@@ -192,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for(i = 0; i < playerScoresList.length; i++) {
             playerScores.innerHTML += `<li>${playerScoresList[i].name} - ${playerScoresList[i].score}</li>`
         }
+        currentScore.innerText = timerDisplay.innerText;
     }
 
     function resetGameBoard() {
