@@ -57,20 +57,27 @@ document.addEventListener("DOMContentLoaded", function () {
     let playerScoresList = [
         {
             name: 'Bradley',
-            score: '01min 23sec'
+            score: '0123'
         },
         {
             name: 'Foley',
-            score: '04min 56sec'
+            score: '0456'
         },
         {
             name: 'Conners',
-            score: '07min 89sec'
+            score: '0789'
         },
         {
             name: 'Jones',
-            score: "01min 11sec"
+            score: "0111"
         }];
+
+    let sortedScoresList = [];    
+
+    
+    for (i = 0; i < playerScoresList.length; i++) {
+        
+    }
 
 
     const saveButton = document.getElementById('save-button');
@@ -197,19 +204,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderScores() {
         playerScores.innerHTML = '';
-        for (i = 0; i < playerScoresList.length; i++) {
-            playerScores.innerHTML += `<li>${playerScoresList[i].name} - ${playerScoresList[i].score}</li>`
+        for (i = 0; i < playerScoresList.length; i++) {              
+            let playerMin = playerScoresList[i].score.slice(0, 2);
+            let playerSec = playerScoresList[i].score.slice(2, 4);
+            playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerMin}min ${playerSec}sec </li>`
         }
         currentScore.innerText = timerDisplay.innerText;
     }
 
-    function updateScoreBoard() {
+    function updateScoreBoard() {        
         const playerName = document.getElementById('player-name');
         if (playerName.value === '') {
             alert('Add your name to the Player Name fiels first!')
             return;
-        } else {            
-            playerScoresList.push({ name: `${playerName.value}`, score: `${timerDisplay.innerText}` });
+        } else {
+            const scoreString = timerDisplay.innerText;
+            let playerMin = scoreString.slice(0, 2);
+            let playerSec = scoreString.slice(6, 8);           
+            playerScoresList.push({ name: `${playerName.value}`, score: `${playerMin + playerSec}`});                    
             playerName.value = null;
         }
     }
