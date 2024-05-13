@@ -26,7 +26,7 @@ body {
     padding: 5vh 0 12vh 0;
 }
 
-h1 {
+h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 5px;
@@ -190,7 +190,7 @@ input:focus {
 /* Start of Media query: tablets (500px and up) */
 @media screen and (min-width: 500px) {
     /* Start of general styles */
-    h1,
+    h2,
     .button {
         font-size: 2.5rem;
     }
@@ -206,7 +206,7 @@ input:focus {
 /* Start of Media query: large tablets and laptops (600px and up) */
 @media screen and (min-width: 600px) {
     /* Start of general styles */
-    h1,
+    h2,
     .button {
         font-size: 3rem;
     }
@@ -227,7 +227,7 @@ input:focus {
 /* Start of Media query: laptops and desktops (700px and up) */
 @media screen and (min-width: 700px) {
     /* Start of general styles */
-    h1,
+    h2,
     .button {
         font-size: 3.5rem;
     }  
