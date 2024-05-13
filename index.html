@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon_io/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='assets/favicon_io/favicon.ico'>
 
     <!-- Style sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -30,9 +30,10 @@
 <body>
     <!-- Start of game container -->
     <section id="game-container">
+        <h1 class="hidden">Flip and Match</h1>
         <!-- Start of welcome screen code -->
         <section id="welcome-screen" class="game-stage">
-            <h1>Flip and Match</h1>
+            <h2>Flip and Match</h2>
             <ol id="instructions">
                 <li>Click on a card to reveal its hidden image.</li>
                 <li>Flip two cards with the same image to get a match.</li>
@@ -46,7 +47,7 @@
 
         <!-- Start of game board code -->
         <section id="game-board" class="game-stage hidden">
-            <h1 id="timer"><i class="fa-solid fa-stopwatch"></i> <span id="timer-display">00min 00sec</span></h1>
+            <h2 id="timer"><i class="fa-solid fa-stopwatch"></i> <span id="timer-display">00min 00sec</span></h2>
             <div id="card-container">
                 <div class="card">
                     <img class="front" src="assets/images/cow.webp" alt="cow">
@@ -102,7 +103,7 @@
 
         <!-- Start of score board code -->
         <section id="score-board" class="game-stage hidden">
-            <h1>Score board</h1>
+            <h2>Score board</h2>
 
             <ol id="player-scores">
             </ol>
