@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // End of score board code
 
     // Functions
+    // Run starting game functions.
     function startGame() {
         shuffleCards();
         startTimer();
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Start the game timer.
     function startTimer() {
         let min = 0;
         let sec = 0;
@@ -128,20 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // Add flip class to cards.
     function flipcard() {
         if (preventClick) {
             return;
         }
-
         if (cardsFlipped.length < 2) {
 
             if (!this.classList.contains('flip', 'match')) {
-
                 this.classList.add('flip');
-
                 if (firstCard === null) {
                     firstCard = this;
-
                 } else if (secondCard === null) {
                     secondCard = this;
                 }
@@ -149,9 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         checkMatching();
         checkWinner();
-
     }
 
+    // Check to see if two cards match.
     function checkMatching() {
         if (cardsFlipped.length === 2) {
             preventClick = true;
@@ -179,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Check to see if all the memory cards are matched.
     function checkWinner() {
         if (matchedCards.length === 12) {
             clearInterval(timerIntId);
@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Retrieves scores from player scores list and displays them in the scoreboard.
     function renderScores() {
         playerScores.innerHTML = '';
         sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
@@ -201,10 +202,11 @@ document.addEventListener("DOMContentLoaded", function () {
         currentScore.innerText = timerDisplay.innerText;
     }
 
+    // Convert timer display to a four digit string & push to player scores list.
     function updateScoreBoard() {
         const playerName = document.getElementById('player-name');
         if (playerName.value === '') {
-            alert('Add your name to the Player Name fiels first!')
+            alert('Add your name to the Player Name field first!')
             return;
         } else {
             const scoreString = timerDisplay.innerText;
@@ -215,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Reset timer and memory cards to starting values.
     function resetGameBoard() {
         min = 0;
         sec = 0;
