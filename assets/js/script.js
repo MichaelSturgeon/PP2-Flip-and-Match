@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // End of game board code
 
     // Start of score board code
-    // Add click event to retry button.
-    
+
+
     const playerScores = document.getElementById('player-scores');
 
 
@@ -66,13 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
             score: '0457'
         }];
 
+    // Add click event to save button.
     const saveButton = document.getElementById('save-button');
     saveButton.addEventListener('click', () => {
         updateScoreBoard();
         renderScores();
     })
 
-
+    // Add click event to retry button.
     const retryButton = document.getElementById('retry-button');
     retryButton.addEventListener('click', () => {
         resetGameBoard();
@@ -134,16 +135,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function flipcard() {
         if (preventClick) {
             return;
-        }
-        if (cardsFlipped.length < 2) {
-
-            if (!this.classList.contains('flip', 'match')) {
-                this.classList.add('flip');
-                if (firstCard === null) {
-                    firstCard = this;
-                } else if (secondCard === null) {
-                    secondCard = this;
-                }
+        } else if (this.classList.contains('match')) {
+            return;
+        } else {
+            this.classList.add('flip');
+            if (firstCard === null) {
+                firstCard = this;
+            } else if (secondCard === null) {
+                secondCard = this;
             }
         }
         checkMatching();
