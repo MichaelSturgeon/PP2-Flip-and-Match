@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start of score board code
     // Add click event to retry button.
-    const currentScore = document.getElementById('current-score');
+    
     const playerScores = document.getElementById('player-scores');
 
 
-    let playerScoresList = [
+    let playerScoresList = JSON.parse(localStorage.getItem("playerScoresList")) || [
         {
             name: 'Lina',
             score: '0021'
@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Retrieves scores from player scores list and displays them in the scoreboard.
     function renderScores() {
+        const currentScore = document.getElementById('current-score');
         playerScores.innerHTML = '';
         sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
         for (i = 0; i < sortedScoresList.length; i++) {
@@ -213,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let playerMin = scoreString.slice(0, 2);
             let playerSec = scoreString.slice(6, 8);
             playerScoresList.push({ name: `${playerName.value}`, score: `${playerMin + playerSec}` });
+            localStorage.setItem("playerScoresList", JSON.stringify(playerScoresList));
             playerName.value = null;
         }
     }
