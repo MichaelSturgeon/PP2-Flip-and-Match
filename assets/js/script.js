@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let preventClick = false;
     let firstCard = null;
     let secondCard = null;
+    const playerName = document.getElementById('player-name');
 
     // Start of welcome screen code    
     // Add click event to play button.
@@ -69,8 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add click event to save button.
     const saveButton = document.getElementById('save-button');
     saveButton.addEventListener('click', () => {
-        updateScoreBoard();
-        renderScores();
+        if (preventClick) {
+            playerName.value = null;
+            alert('Your score has already been saved!')            
+            return;
+        } else {
+            updateScoreBoard();
+            renderScores();
+        }
+        preventClick = true;        
     })
 
     // Add click event to retry button.
@@ -203,8 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Convert timer display to a four digit string & push to player scores list.
-    function updateScoreBoard() {
-        const playerName = document.getElementById('player-name');
+    function updateScoreBoard() {        
         if (playerName.value === '') {
             alert('Add your name to the Player Name field first!')
             return;
@@ -223,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         min = 0;
         sec = 0;
         timerDisplay.innerHTML = "00min 00sec";
+        preventClick = false;
         cards.forEach(card => {
             card.classList.remove('flip', 'match');
         });
