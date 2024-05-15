@@ -1,4 +1,5 @@
 # Flip and Match
+![Flip and Match project displayed on different screen sizes](/documentation/amiresponsive/amiresponsive-screenshot.png)
 
 ## Introduction
 Flip and Match is a fun and interactive memory game designed to support curious young minds. With the use of shapes, colours, and exciting images, we aim to encourage learning through exploration. The user’s goal is to reveal the image on the flip-side of a card and match it with its pairs. 
@@ -35,7 +36,12 @@ Key information is also highlighted with the use of colours; however, failing to
 
 ## Skeleton Plane
 Balsamiq was used to create all of the wireframes for this project. Below you’ll find screenshots of the original project layout, which remains mostly unchanged in the final deployed website.
-
+![Flip and Match Wireframe for mobile devices](/documentation/wireframe/mobile-wireframe.png)
+*This image shows the wire for mobile devices*
+![Flip and Match Wireframe for tablets](/documentation/wireframe/tablet-wireframe.png)
+*This image shows the wire for tablets*
+![Flip and Match Wireframe for desktops](/documentation/wireframe/desktop-wireframe.png)
+*This image shows the wire for desktops*
 ## Surface Plane
 ### Project Features
 - **Basic text:** By using simple wording and a cartoon-like font, the user is able to easily digest the information presented without feeling confused and overwhelmed.
@@ -99,6 +105,11 @@ I also field tested my site on several devices, which include:
 - iPhone 11  
 
 **Validation**
+- [HTML validation](/documentation/validation/html-validation.png)
+*This image shows the HTML code returning no errors*
+- [CSS validation](/documentation/validation/css-validation.png)
+*This image shows the CSS code returning no errors*
+
 
 **Detected bugs and solutions**  
 - The numbers of the `ol` items were displaying outside of the viewport on smaller mobile phone devices. For the solution, I simply use the `list-style-position` rule and set it to inside.
