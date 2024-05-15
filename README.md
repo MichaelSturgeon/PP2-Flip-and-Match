@@ -80,6 +80,7 @@ bugs, and testing the responsiveness of the site.
 - **Lighthouse:** used for testing the performance and accessibility of the website.
 - **W3C Markup Validator and W3C CSS Validator:** were used to validate the pages of
 the project to ensure there were no errors.
+- **JSHints** was used to check for errors in the javascript code.
 - **AmIResponsive:** used to create the responsive image in the README file.    
 
 ## Testing
@@ -111,12 +112,15 @@ I also field tested my site on several devices, which include:
 *This image shows the HTML code returning no errors*
 - [CSS validation](/documentation/validation/css-validation.png)
 *This image shows the CSS code returning no errors*
+- [JS validation](/documentation/validation//js-validation.png)
+*This image shows the JS code returning no errors*
 
 
 **Detected bugs and solutions**  
 - The numbers of the `ol` items were displaying outside of the viewport on smaller mobile phone devices. For the solution, I simply use the `list-style-position` rule and set it to inside.
 - The flip animation for the card elements was producing lag as the hidden images were being loaded. To solve this I re-downloaded the images at a lower resolution and converted them from JPEG to WebP file type.
 - The user was able to log the same card into both the first and second card variables simply by double-clicking. To fix this, I added an if statement to check if the card clicked has a class of either flip, which put the card in a flipped state.
+- JSHints was returning a fault in the code, whereby I had an undeclared or unused variable. To fix this I declared said variable globally so that it could be accessed from various functions.
 
 ## Deployment
 **Deploying a GitHub Repository via GitHub Pages**  

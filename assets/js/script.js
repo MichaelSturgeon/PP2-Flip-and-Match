@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerDisplay = document.getElementById('timer-display');
     let min = 0;
     let sec = 0;
+    let timerIntId;
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
     const matchedCards = document.getElementsByClassName('match');
