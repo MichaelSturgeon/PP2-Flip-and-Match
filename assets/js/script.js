@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameBoard = document.getElementById('game-board');
     const scoreBoard = document.getElementById('score-board');
     const timerDisplay = document.getElementById('timer-display');
+    let min = 0;
+    let sec = 0;
     const cards = document.querySelectorAll('.card');
     const cardsFlipped = document.getElementsByClassName('flip');
     const matchedCards = document.getElementsByClassName('match');
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         welcomeScreen.classList.add('hidden');
         gameBoard.classList.remove('hidden');
         startGame();
-    })
+    });
 
     // Display a random benefit on welcome screen.
     const benefits = document.getElementById('benefits');
@@ -38,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
         'Memory games encourage children to develop their problem solving skills, and think outside the box in order to succeed in the game.'
     ];
     benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)];
-    renderBenefits = setInterval(function () {
-        benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)]
+    setInterval(function () {
+        benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)];
     }, 10000);
 
     // End of welcome screen code
@@ -71,15 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const saveButton = document.getElementById('save-button');
     saveButton.addEventListener('click', () => {
         if (preventClick) {
-            playerName.value = null;
-            alert('Your score has already been saved!')            
+            alert('Your score has already been saved!');
             return;
         } else {
             updateScoreBoard();
             renderScores();
+            playerName.value = null;
         }
-        preventClick = true;        
-    })
+    });
 
     // Add click event to retry button.
     const retryButton = document.getElementById('retry-button');
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gameBoard.classList.remove('hidden');
         scoreBoard.classList.add('hidden');
         startGame();
-    })
+    });
     // End of score board code
 
     // Functions
@@ -107,10 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start the game timer.
     function startTimer() {
-        let min = 0;
-        let sec = 0;
-
-        timerIntId = setInterval(() => {
+            timerIntId = setInterval(() => {
             sec++;
             if (sec == 60) {
                 min++;
@@ -129,13 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (min == 60) {
-                timer = false;
+                let timer = false;
                 return timer;
             }
 
             timerDisplay.innerHTML = minDisplayed + 'min' + ' ' + secDisplayed + 'sec';
 
-        }, 1000)
+        }, 1000);
 
     }
 
@@ -193,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 gameBoard.classList.add('hidden');
                 scoreBoard.classList.remove('hidden');
                 renderScores();
-            }, 2000)
+            }, 2000);
         }
     }
 
@@ -201,19 +199,19 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderScores() {
         const currentScore = document.getElementById('current-score');
         playerScores.innerHTML = '';
-        sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
-        for (i = 0; i < sortedScoresList.length; i++) {
+        let sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
+        for (let i = 0; i < sortedScoresList.length; i++) {
             let playerMin = sortedScoresList[i].score.slice(0, 2);
             let playerSec = sortedScoresList[i].score.slice(2, 4);
-            playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerMin}min ${playerSec}sec </li>`
+            playerScores.innerHTML += `<li>${playerScoresList[i].name} ${playerMin}min ${playerSec}sec</li>`;
         }
         currentScore.innerText = timerDisplay.innerText;
     }
 
     // Convert timer display to a four digit string & push to player scores list.
-    function updateScoreBoard() {        
+    function updateScoreBoard() {
         if (playerName.value === '') {
-            alert('Add your name to the Player Name field first!')
+            alert('Add your name to the Player Name field first!');
             return;
         } else {
             const scoreString = timerDisplay.innerText;
@@ -221,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let playerSec = scoreString.slice(6, 8);
             playerScoresList.push({ name: `${playerName.value}`, score: `${playerMin + playerSec}` });
             localStorage.setItem("playerScoresList", JSON.stringify(playerScoresList));
+            preventClick = true;
             playerName.value = null;
         }
     }
@@ -236,4 +235,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-})
+});
