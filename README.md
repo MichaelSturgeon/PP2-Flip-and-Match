@@ -2,7 +2,7 @@
 ![Flip and Match project displayed on different screen sizes](/documentation/amiresponsive/amiresponsive-screenshot.png)
 
 ## Introduction
-Flip and Match is a fun and interactive memory game designed to support curious young minds. With the use of shapes, colours, and exciting images, we aim to encourage learning through exploration. The user’s goal is to reveal the image on the flip-side of a card and match it with its pairs. 
+Flip and Match is a fun and interactive memory game designed to support curious young minds. With the use of shapes, colours, and exciting images, we aim to encourage learning through exploration. The user’s goal is to reveal the image on the flip-side of a card and match it with its pairs.[View the project](https://michaelsturgeon.github.io/portfolio-project-2-flip-and-match/)
 
 ## User Experience Design
 The five planes of UXD greatly influenced the development of this project. Throughout each stage of the project’s progress, I took into account the importance of each new feature added and how it worked towards shaping a positive user outcome.
@@ -37,22 +37,25 @@ Key information is also highlighted with the use of colours; however, failing to
 ## Skeleton Plane
 Balsamiq was used to create all of the wireframes for this project. Below you’ll find screenshots of the original project layout, which remains mostly unchanged in the final deployed website.
 ![Flip and Match Wireframe for mobile devices](/documentation/wireframe/mobile-wireframe.png)
-*This image shows the wire for mobile devices*
+*This image shows the wireframe for mobile devices*
 ![Flip and Match Wireframe for tablets](/documentation/wireframe/tablet-wireframe.png)
-*This image shows the wire for tablets*
+*This image shows the wireframe for tablets*
 ![Flip and Match Wireframe for desktops](/documentation/wireframe/desktop-wireframe.png)
-*This image shows the wire for desktops*
+*This image shows the wireframe for desktops*
 ## Surface Plane
 ### Project Features
 - **Basic text:** By using simple wording and a cartoon-like font, the user is able to easily digest the information presented without feeling confused and overwhelmed.
-
 - **Colours:** With the use of contrasting and vibrant colours, the user is intuitively guided through each stage of the game.
-
 - **Memory game benefits:** The welcome screen features snippets of information located towards the bottom of the screen, that will provide the user or their parents with the key benefits of playing such a memory game.
+![Flip and Match welcome screen features](/documentation/features//welcome-screenshot(Pixel%207).png)
+*This image shows the simple wording, memory game benefits and the use of colour on the welcome screen*
 
-- **Timer and score board:** With the use of a timer, the game offers an element of competition, as users are able to race against time and add their score to the score-board, in an attempt to claim first place. 
- 
+- **Timer and score board:** With the use of a timer, the game offers an element of competition, as users are able to race against time and add their score to the score-board on the next screen, in an attempt to claim first place. Scores are save in local storage so players can try to beat their score at a later date.
 - **Retry button:** The retry button displayed on the score-board screen acts independently of the score-saving features. This means that users, without saving their score, can quickly jump into another game of Flip and Match.
+![Flip and Match gameboard features](/documentation/features/gameboard-screenshot(Pixel%207).png)
+*This image shows the timer feature on the gameboard screen*
+![Flip and Match scoreboard features](/documentation/features/scoreboard-screenshot(Pixel%207).png)
+*This image shows the scoreboard and retry button features on the scoreboard screen*
 
 ### Features left to implement
 - **Image variety:** Upon starting a new game, users will be presented with a random group of memory card images to keep the game feeling fresh.
@@ -77,8 +80,7 @@ bugs, and testing the responsiveness of the site.
 - **Lighthouse:** used for testing the performance and accessibility of the website.
 - **W3C Markup Validator and W3C CSS Validator:** were used to validate the pages of
 the project to ensure there were no errors.
-- **AmIResponsive:** used to create the responsive image in the README file.
-    
+- **AmIResponsive:** used to create the responsive image in the README file.    
 
 ## Testing
 I tested this website across the following web browsers:  
