@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let firstCard = null;
     let secondCard = null;
     const playerName = document.getElementById('player-name');
-
-    // Start of welcome screen code    
+    
     // Add click event to play button.
     const playButton = document.getElementById('play-button');
     playButton.addEventListener('click', () => {
@@ -26,9 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         startGame();
     });
 
-    // Display a random benefit on welcome screen.
+    // Array of memory game benefits.
     const benefits = document.getElementById('benefits');
-
     const benefitsList = [
         'In a world filled with distractions, memory games can help extend your childs attention span and encourage brain their to stay focused.',
         'Memory games can promote neuroplasticity, which is the brains ability to reorganize itself and form new connections. ',
@@ -40,22 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
         'The focus and concentration required by memory games will develop a childs ability to learn to manage distractions.',
         'Memory games encourage children to develop their problem solving skills, and think outside the box in order to succeed in the game.'
     ];
+    // Display a random benefit on welcome screen.
     benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)];
     setInterval(function () {
         benefits.innerText = benefitsList[Math.floor(Math.random() * benefitsList.length)];
     }, 10000);
 
-    // End of welcome screen code
-
-    // Start of game board code   
-    // End of game board code
-
-    // Start of score board code
-
-
+    // Array of player names and scores.
     const playerScores = document.getElementById('player-scores');
-
-
     let playerScoresList = JSON.parse(localStorage.getItem("playerScoresList")) || [
         {
             name: 'Lina',
@@ -91,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scoreBoard.classList.add('hidden');
         startGame();
     });
-    // End of score board code
 
     // Functions
     // Run starting game functions.
@@ -200,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderScores() {
         const currentScore = document.getElementById('current-score');
         playerScores.innerHTML = '';
+        // The array sorting method below was found on freecodecamp.org. 
         let sortedScoresList = playerScoresList.sort((a, b) => a.score - b.score);
         for (let i = 0; i < sortedScoresList.length; i++) {
             let playerMin = sortedScoresList[i].score.slice(0, 2);

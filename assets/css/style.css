@@ -38,6 +38,7 @@ li {
     font-weight: bold;
     line-height: 15px;
     padding: 10px;
+    /* The list-style-position rule was found on Stackoverflow. */
     list-style-position: inside;
     max-width: 500px;
 }
@@ -72,7 +73,7 @@ li {
     background-color: #812991;
     border-color: #a5439a;
 }
-
+/* The The code for the 3D card flip effect was replicated from W3Schools. */
 #card-container {
     display: grid;
     grid-template-columns: repeat(3, auto);
