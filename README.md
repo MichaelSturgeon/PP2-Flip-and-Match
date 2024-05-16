@@ -56,6 +56,8 @@ Balsamiq was used to create all of the wireframes for this project. Below you’
 *This image shows the timer feature on the gameboard screen*
 ![Flip and Match scoreboard features](/documentation/features/scoreboard-screenshot(Pixel%207).png)
 *This image shows the scoreboard and retry button features on the scoreboard screen*
+[Before local storage is used](/documentation/features/before-local-storage.png)
+[After local storage is used](/documentation/features/after-local-storage.png)
 
 ### Features left to implement
 - **Image variety:** Upon starting a new game, users will be presented with a random group of memory card images to keep the game feeling fresh.
