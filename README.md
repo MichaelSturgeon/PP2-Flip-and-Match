@@ -2,7 +2,7 @@
 ![Flip and Match project displayed on different screen sizes](/documentation/amiresponsive/amiresponsive-screenshot.png)
 
 ## Introduction
-Flip and Match is a fun and interactive memory game designed to support curious young minds. With the use of shapes, colours, and exciting images, we aim to encourage learning through exploration. The user’s goal is to reveal the image on the flip-side of a card and match it with its pairs.[View the project](https://michaelsturgeon.github.io/portfolio-project-2-flip-and-match/)
+Flip and Match is a fun and interactive memory game designed to support curious young minds. With the use of shapes, colours, and exciting images, we aim to encourage learning through exploration. The user’s goal is to reveal the image on the flip-side of a card and match it with its pairs.[View the project](https://michaelsturgeon.github.io/PP2-Flip-and-Match/)
 
 ## User Experience Design
 The five planes of UXD greatly influenced the development of this project. Throughout each stage of the project’s progress, I took into account the importance of each new feature added and how it worked towards shaping a positive user outcome.
